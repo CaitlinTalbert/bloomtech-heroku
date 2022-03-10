@@ -16,8 +16,11 @@ server.get("/api/hello", (req, res) => {
   });
 });
 
-server.get("/", (req, res) => {
-  res.end("<h1>Hi</h1>");
+// server.get("/", (req, res) => {
+//   res.end("<h1>Hi</h1>");
+// });
+server.use("*", (req, res) => {
+  res.send(`<h1>hello</h1>`);
 });
 
 server.use((err, req, res, next) => {
